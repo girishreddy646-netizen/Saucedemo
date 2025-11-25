@@ -1,2 +1,2 @@
 # Saucedemo
-Saucedemo ecomas website automation testing with playwright
+Saucedemo E-Commerce website automation testing with playwright
