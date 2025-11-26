@@ -1,0 +1,22 @@
+{
+  "name": "saucedemo",
+  "version": "1.0.0",
+  "description": "Saucedemo ecomas website automation testing with playwright",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/girishreddy646-netizen/Saucedemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/girishreddy646-netizen/Saucedemo/issues"
+  },
+  "homepage": "https://github.com/girishreddy646-netizen/Saucedemo#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1"
+  }
+}

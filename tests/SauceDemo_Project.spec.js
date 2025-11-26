@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+test('SauceDemo Project - Login and Add to Cart- Logout', async ({ page }) => {
+
+    await page.goto('https://www.saucedemo.com/');
+    await page.locator('[data-test="username"]').click();
+    await page.locator('[data-test="username"]').fill('standard_user');
+    await page.locator('[data-test="password"]').click();
+    await page.locator('[data-test="password"]').fill('secret_sauce');
+    await page.locator('[data-test="login-button"]').click();
+    await page.locator('[data-test="item-4-title-link"]').click();
+    await page.locator('[data-test="add-to-cart"]').click();
+    await expect(page.locator('[data-test="inventory-item-name"]')).toContainText('Sauce Labs Backpack');
+    await page.locator('[data-test="back-to-products"]').click();
+    await page.getByText('It\'s not every day that you').click();
+    await page.locator('[data-test="item-5-title-link"]').click();
+    await page.locator('[data-test="add-to-cart"]').click();
+    await page.locator('[data-test="back-to-products"]').click();
+    await page.getByText('Sauce Labs OnesieRib snap').click();
+    await page.locator('[data-test="item-2-title-link"]').click();
+    await expect(page.locator('[data-test="inventory-item-name"]')).toBeVisible();
+    await page.locator('[data-test="back-to-products"]').click();
+    await page.getByText('This classic Sauce Labs t-').click();
+    await page.locator('[data-test="item-3-title-link"]').click();
+    await page.locator('[data-test="inventory-item-name"]').click();
+    await page.locator('[data-test="back-to-products"]').click();
+    await page.locator('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click();
+    await page.getByRole('button', { name: 'Open Menu' }).click();
+    await page.goto('https://www.saucedemo.com/inventory.html');
+    await page.getByText('Swag Labs').click();
+    await page.close();
+});
